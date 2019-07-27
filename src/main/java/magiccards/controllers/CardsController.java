@@ -23,7 +23,7 @@ public class CardsController {
 	@RequestMapping(value = "", method = RequestMethod.GET, produces = "application/json")
 	public Page<Card> getCards(@RequestParam(value="page")int pageNumber, @RequestParam int size) {
 
-		Pageable page = new PageRequest(pageNumber, size);
+		Pageable page = new PageRequest(pageNumber-1, size);
 
 		return cardRepository.findAll(page);
 	}
