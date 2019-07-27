@@ -29,7 +29,7 @@ public class Expansion {
 	@Column(name = "expansioncategoryid", columnDefinition = "smallint")
 	private Integer expansionCategoryId;
 	@Column(name = "ispromo", columnDefinition = "bit")
-	private boolean isPromo;
+	private int isPromo;
 	@Column(name = "islegal", columnDefinition = "bit")
-	private boolean isLegal;
+	private int isLegal;
 }
