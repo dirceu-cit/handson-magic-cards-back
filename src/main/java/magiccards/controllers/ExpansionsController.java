@@ -42,7 +42,8 @@ public class ExpansionsController {
 	}
 
 	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-	public void delete(@PathVariable("id")Integer id) {
+	public void delete(@PathVariable("id")String expansionId) {
+		Integer id = Integer.parseInt(expansionId);
 		expansionRepository.delete(id);
 	}
 }

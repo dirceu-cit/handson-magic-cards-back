@@ -3,15 +3,12 @@ package magiccards.entities;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
 @Entity
+@NoArgsConstructor
 @Table(name = "magicexpansion")
 public class Expansion {
     @Id
@@ -30,8 +27,23 @@ public class Expansion {
     @Column(name = "expansioncategoryid",columnDefinition = "smallint")
     private Integer expansionCategoryId;
     @Column(name = "ispromo")
-    private boolean isPromo;
+    private Boolean promo;
     @Column(name = "islegal")
-    private boolean isLegal;
+    private Boolean legal;
+
+    public Expansion(Integer expansionId,String name, String ptBrName,String linkName, String code,Integer category,
+    Boolean promo, Boolean legal, Date date){
+        this.expansionId = expansionId;
+        this.name = name;
+        this.ptBrName = ptBrName;
+        this.linkName = linkName;
+        this.code = code;
+        this.launchDate = new Date();
+        this.expansionCategoryId = category;
+        this.legal = legal;
+        this.promo = promo;
+        this.expansionCategoryId = category;
+        this.launchDate = date;
+    }
 
 }
